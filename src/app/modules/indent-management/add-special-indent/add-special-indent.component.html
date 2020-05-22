@@ -1,0 +1,42 @@
+<div>
+    <label for="" style="margin-left: 114px;">To Depot :
+        <input type="text" [(ngModel)]="indentModel.depotId">
+    </label>
+</div>
+<div>
+    <label for="" style="margin-left:84px">Product Code:
+        <input type="text" [(ngModel)]="indentModel.productCode">
+    </label>
+</div>
+<div>
+    <label for="" style="margin-left: 75px ;">
+        Brand Name :
+        <input type="text" [(ngModel)]="indentModel.brandName">
+    </label>
+
+</div>
+<div>
+    <label for="" style="margin-left:116px">
+        Size :
+        <input type="text" [(ngModel)]="indentModel.size">
+    </label>
+</div>
+<div>
+    <label for="" style="margin-left:116px">
+        Quantity in Cases :
+        <input type="text" [(ngModel)]="indentModel.qtyInCases">
+    </label>
+</div>
+<div>
+    <label for="" style="margin-left:116px">
+        Rate Per Case :
+        <input type="text" [(ngModel)]="indentModel.ratePerCases">
+    </label>
+</div>
+<div>
+    <label for="" style="margin-left:116px">
+        Total Amount :
+        <input type="text" [(ngModel)]="indentModel.totalAmount">
+    </label>
+</div>
+<button mat-dialog-close style="background-color: #2e5d74;margin-left: 177px;" (click)="saveSpecialIndent()">Save Special Indent</button>

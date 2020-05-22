@@ -32,6 +32,14 @@ export class IndentService {
     return this._http.post<any>(url, requestBody)
       .pipe(catchError(this._http.handleHttpError));
   }
+  saveSpecialIndent(postBody) {
+    const url = 'ifs/saveIFS';
+    const requestBody = {
+      requestData: postBody
+    };
+    return this._http.post<any>(url, requestBody)
+      .pipe(catchError(this._http.handleHttpError));
+  }
   getDepotDts(): Observable<any> {
     return this._http.get<any>('imgt/fetchDepotDts').pipe(catchError(this._http.handleHttpError));
   }

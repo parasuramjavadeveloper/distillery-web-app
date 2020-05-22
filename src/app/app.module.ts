@@ -227,6 +227,7 @@ import { RetailerCardsComponent } from './modules/indent-management/retailer-car
 import { RetailerChallanTransferComponent } from './modules/indent-management/retailer-challan-transfer/retailer-challan-transfer.component';
 import { RetailerIndentComponent } from './modules/indent-management/retailer-indent/retailer-indent.component';
 import { SpecialIndentComponent } from './modules/indent-management/special-indent/special-indent.component';
+import { AddSpecialIndentComponent } from './modules/indent-management/add-special-indent/add-special-indent.component';
 import { UploadCardsComponent } from './modules/indent-management/upload-cards/upload-cards.component';
 import { BreakagesComponent } from './modules/breakages/breakages.component';
 import { BreakagesDepotComponent } from './modules/breakages/breakages-depot/breakages-depot.component';
@@ -445,6 +446,7 @@ const appRoutes: Routes = [
       { path: 'indent-management/retailer-challan-transfer', component:RetailerChallanTransferComponent },
       { path: 'indent-management/retailer-indent', component:RetailerIndentComponent },
       { path: 'indent-management/special-indent', component:SpecialIndentComponent },
+      { path: 'indent-management/add-special-indent', component:AddSpecialIndentComponent },
       { path: 'indent-management/upload-cards', component:UploadCardsComponent },
       { path: 'indent-management/special-ifs', component:SpecialIfsComponent },
       { path: 'breakages', component: BreakagesComponent },
@@ -709,6 +711,7 @@ const appRoutes: Routes = [
     RetailerChallanTransferComponent,
     RetailerIndentComponent,
     SpecialIndentComponent,
+    AddSpecialIndentComponent,
     UploadCardsComponent,
     BreakagesComponent,
     BreakagesDepotComponent,
