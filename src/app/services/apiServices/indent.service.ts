@@ -34,10 +34,10 @@ export class IndentService {
   }
   saveSpecialIndent(postBody) {
     const url = 'ifs/saveIFS';
-    const requestBody = {
+   /*  const requestBody = {
       requestData: postBody
-    };
-    return this._http.post<any>(url, requestBody)
+    }; */
+    return this._http.post<any>(url,postBody)
       .pipe(catchError(this._http.handleHttpError));
   }
   getDepotDts(): Observable<any> {

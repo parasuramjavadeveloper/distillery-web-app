@@ -1,42 +1,82 @@
-<div>
-    <label for="" style="margin-left: 114px;">To Depot :
-        <input type="text" [(ngModel)]="indentModel.depotId">
-    </label>
-</div>
-<div>
-    <label for="" style="margin-left:84px">Product Code:
-        <input type="text" [(ngModel)]="indentModel.productCode">
-    </label>
-</div>
-<div>
-    <label for="" style="margin-left: 75px ;">
-        Brand Name :
-        <input type="text" [(ngModel)]="indentModel.brandName">
-    </label>
-
-</div>
-<div>
-    <label for="" style="margin-left:116px">
-        Size :
-        <input type="text" [(ngModel)]="indentModel.size">
-    </label>
-</div>
-<div>
-    <label for="" style="margin-left:116px">
-        Quantity in Cases :
-        <input type="text" [(ngModel)]="indentModel.qtyInCases">
-    </label>
-</div>
-<div>
-    <label for="" style="margin-left:116px">
-        Rate Per Case :
-        <input type="text" [(ngModel)]="indentModel.ratePerCases">
-    </label>
-</div>
-<div>
-    <label for="" style="margin-left:116px">
-        Total Amount :
-        <input type="text" [(ngModel)]="indentModel.totalAmount">
-    </label>
-</div>
-<button mat-dialog-close style="background-color: #2e5d74;margin-left: 177px;" (click)="saveSpecialIndent()">Save Special Indent</button>
+<div class="animated fadeIn">
+    <!--/.row-->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <!-- Large modal -->
+          <div class="card-body">
+           
+  
+            <div class="modal-body mobile-padding">
+  
+              <div class="col-sm-12 mobile-padding">
+                <div class="card">
+                  <div class="card-header">
+                    <strong>Adding Special Indent </strong>
+                  </div>
+                  <form name="form" (ngSubmit)="f.form.valid && saveSpecialIndent()" #f="ngForm" nphonephonneovalidate>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="form-group col-sm-6">
+                          <label for="depotName">DepotName </label><strong class="text-danger">*</strong>
+                           <input type="text" class="form-control" [(ngModel)]="indentModel.depotId"  name="depot" #depot="ngModel" id="depot" placeholder="Enter Depot Name">
+                        </div>
+                        <div class="form-group col-sm-6">
+                          <label for="productCode">ProductCode</label>
+                          <input type="text" class="form-control" [(ngModel)]="indentModel.productCode" name="productCode" #productCode="ngModel" id="productCode" placeholder="Enter ProductCode">
+                        </div>
+                      </div>
+  
+                      <div class="row">
+                        <div class="form-group col-sm-6">
+                          <label for="brandName">BrandName</label>
+                          <input type="text" class="form-control" [(ngModel)]="indentModel.brandName" name="brandName" #brandName="ngModel" id="brandName" placeholder="Enter BrandName">
+                        </div>
+                        <div class="form-group col-sm-6">
+                          <label for="size">Size</label>
+                          <input type="text" class="form-control" [(ngModel)]="indentModel.size" id="size" name="size" #fax="ngModel" placeholder="Enter Size">
+                        </div>
+                      </div>
+  
+                      <div class="row">
+                        <div class="form-group col-sm-6">
+                          <label for="QtyInCases">QtyInCases</label>
+                          <input type="text" class="form-control" [(ngModel)]="indentModel.qtyInCases" name="qtyInCases" #qtyInCases="ngModel"
+                                 id="QtyInCases" placeholder="Enter QtyInCases">
+                        </div>
+                        <div class="form-group col-sm-6">
+                          <label for="ratePerCases">RatePerCases</label>
+                          <input type="text" class="form-control" [(ngModel)]="indentModel.ratePerCases" name="ratePerCases" #ratePerCases="ngModel"
+                                 id="ratePerCases" placeholder="Enter RatePerCases">
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="totalAmount">TotalAmount</label>
+                            <input type="text" class="form-control" [(ngModel)]="indentModel.totalAmount" name="totalAmount" #totalAmount="ngModel" id="totalAmount" placeholder="Enter TotalAmount">
+                          </div>
+                      </div>
+  
+  
+                      
+  
+  
+                      <div class="row">
+                        <div class="form-group col-sm-12 text-center">
+                          <button tooltip="Save SpecialIndent" class="btn btn-primary">Save</button>
+                          <br><br>
+                          <button type="button" (click)="back()"  tooltip="Back button" class="btn btn-primary">Back</button>
+                        </div>
+                      </div>
+                    </div>
+  
+  
+                  </form>
+                </div>
+              </div>
+              <!--/.col-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
