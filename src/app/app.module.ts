@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { NgxSpinnerModule } from "ngx-spinner"; 
 import { AgGridModule } from 'ag-grid-angular';
 import { MatDatepickerModule, MatInputModule, MatNativeDateModule, MatDialogModule, MatSidenavModule} from '@angular/material';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
@@ -788,7 +789,8 @@ const appRoutes: Routes = [
     MatPaginatorModule,
     BsDatepickerModule.forRoot(),
     DatepickerModule.forRoot(),
-    NgxPermissionsModule.forRoot()
+    NgxPermissionsModule.forRoot(),
+    NgxSpinnerModule  
   ],
   entryComponents: [IfsComponent,ExiseRemitanceFormComponent,
     ChangePasswordComponent, SpiritBottlingComponent,

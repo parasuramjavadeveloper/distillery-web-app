@@ -19,22 +19,50 @@
                       <div class="row">
                         <div class="form-group col-sm-6">
                           <label for="depotName">DepotName </label><strong class="text-danger">*</strong>
-                           <input type="text" class="form-control" [(ngModel)]="indentModel.depotId"  name="depot" #depot="ngModel" id="depot" placeholder="Enter Depot Name">
+                           <input type="text" class="form-control" [(ngModel)]="indentModel.depotId"  name="depot" #depotId="ngModel" id="depot" required placeholder="Enter Depot Name">
                         </div>
+                        <div *ngIf="depotId.invalid && (depotId.dirty || depotId.touched)" class="alert alert-danger">
+
+                            <div *ngIf="depotId.errors.required">
+                                DepotName is required.
+                            </div>
+                           <div *ngIf="depotId.errors.minlength">
+                                DepotName must be at least 4 characters long.
+                           </div>
+                         </div>
                         <div class="form-group col-sm-6">
                           <label for="productCode">ProductCode</label>
-                          <input type="text" class="form-control" [(ngModel)]="indentModel.productCode" name="productCode" #productCode="ngModel" id="productCode" placeholder="Enter ProductCode">
+                          <input type="text" class="form-control" [(ngModel)]="indentModel.productCode" name="productCode" #productCode="ngModel" id="productCode" required minlength="4" placeholder="Enter ProductCode">
                         </div>
+                        <div *ngIf="productCode.invalid && (productCode.dirty || productCode.touched)" class="alert alert-danger">
+
+                        <div *ngIf="productCode.errors.required">
+                            ProductCode is required.
+                        </div>
+                       <div *ngIf="productCode.errors.minlength">
+                            ProductCode must be at least 4 characters long.
+                       </div>
+  
+                     </div>
                       </div>
   
                       <div class="row">
                         <div class="form-group col-sm-6">
                           <label for="brandName">BrandName</label>
-                          <input type="text" class="form-control" [(ngModel)]="indentModel.brandName" name="brandName" #brandName="ngModel" id="brandName" placeholder="Enter BrandName">
+                          <input type="text" class="form-control" [(ngModel)]="indentModel.brandName" name="brandName" #brandName="ngModel" id="brandName" required placeholder="Enter BrandName">
                         </div>
+                        <div *ngIf="brandName.invalid && (brandName.dirty || brandName.touched)" class="alert alert-danger">
+
+                            <div *ngIf="brandName.errors.required">
+                                BrandName is required.
+                            </div>
+                           <div *ngIf="brandName.errors.minlength">
+                               BrandName must be at least 4 characters long.
+                           </div>
+                         </div>
                         <div class="form-group col-sm-6">
                           <label for="size">Size</label>
-                          <input type="text" class="form-control" [(ngModel)]="indentModel.size" id="size" name="size" #fax="ngModel" placeholder="Enter Size">
+                          <input type="number" class="form-control" [(ngModel)]="indentModel.size" id="size" name="size" #fax="ngModel" required placeholder="Enter Size">
                         </div>
                       </div>
   
@@ -42,16 +70,16 @@
                         <div class="form-group col-sm-6">
                           <label for="QtyInCases">QtyInCases</label>
                           <input type="text" class="form-control" [(ngModel)]="indentModel.qtyInCases" name="qtyInCases" #qtyInCases="ngModel"
-                                 id="QtyInCases" placeholder="Enter QtyInCases">
+                                 id="QtyInCases" required placeholder="Enter QtyInCases">
                         </div>
                         <div class="form-group col-sm-6">
                           <label for="ratePerCases">RatePerCases</label>
                           <input type="text" class="form-control" [(ngModel)]="indentModel.ratePerCases" name="ratePerCases" #ratePerCases="ngModel"
-                                 id="ratePerCases" placeholder="Enter RatePerCases">
+                                 id="ratePerCases" required placeholder="Enter RatePerCases">
                         </div>
                         <div class="form-group col-sm-6">
                             <label for="totalAmount">TotalAmount</label>
-                            <input type="text" class="form-control" [(ngModel)]="indentModel.totalAmount" name="totalAmount" #totalAmount="ngModel" id="totalAmount" placeholder="Enter TotalAmount">
+                            <input type="text" class="form-control" [(ngModel)]="indentModel.totalAmount" name="totalAmount" #totalAmount="ngModel" id="totalAmount" required placeholder="Enter TotalAmount">
                           </div>
                       </div>
   
@@ -79,4 +107,6 @@
       </div>
     </div>
   </div>
-  
+  <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+    <p style="color: white">Please Wait. </p>  
+    </ngx-spinner>

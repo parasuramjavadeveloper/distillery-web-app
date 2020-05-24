@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { IndentService } from 'src/app/services/apiServices/indent.service';
+import { NgxSpinnerService } from "ngx-spinner";  
 
 
 @Component({
@@ -14,7 +15,7 @@ export class AddSpecialIndentComponent implements OnInit {
   index: number;
   ifsNo: any;
 
-  constructor(private transport:MatDialog,private indentService: IndentService) { }
+  constructor(private transport:MatDialog,private indentService: IndentService,private spinnerService: NgxSpinnerService) { }
 
   ngOnInit() {
   }
@@ -23,7 +24,7 @@ export class AddSpecialIndentComponent implements OnInit {
   } */
 
   saveSpecialIndent(){
-
+    this.spinnerService.show();
     if (this.indentModel.productCode == undefined || this.indentModel.productCode =="") {
       this.index = -1;
        //window.scroll(0,0);
@@ -46,12 +47,13 @@ export class AddSpecialIndentComponent implements OnInit {
     this.indentService.saveSpecialIndent(req).subscribe(response => {
       this.ifsNo=response.responseData.indentNo;
       console.log('ifs number is'+ this.ifsNo);
+      this.spinnerService.hide();  
        //this.spinner.hide();
       //this.router.navigate(['/company/view/' + response.companyid]);
       // this.router.navigate(['/company/list']);
     },
      error => {
-      // this.spinner.hide();
+      this.spinnerService.hide();
      });
   }
 }

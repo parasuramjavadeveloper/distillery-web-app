@@ -40,6 +40,11 @@ export class IndentService {
     return this._http.post<any>(url,postBody)
       .pipe(catchError(this._http.handleHttpError));
   }
+  getALLIFS() {
+    const url = 'ifs/getAllIFS';
+    return this._http.get<any>(url)
+      .pipe(catchError(this._http.handleHttpError));
+  }
   getDepotDts(): Observable<any> {
     return this._http.get<any>('imgt/fetchDepotDts').pipe(catchError(this._http.handleHttpError));
   }

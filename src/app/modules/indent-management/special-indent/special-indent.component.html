@@ -37,9 +37,9 @@ padding: 6px;">
 </nav>
 <div>
     <table class="table table-striped">
+        <thead class="thead-light">
         <tr>
             <th><input type="checkbox"></th>
-            <th>S.No</th>
             <th>IFS No</th>
             <th>Distillery</th>
             <th>Depot</th>
@@ -47,15 +47,17 @@ padding: 6px;">
             <th>Status</th>
 
         </tr>
-        <tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sindent of specialindents">
             <td><input type="checkbox"></td>
-            <td>1</td>
-            <td>AJA3435WE</td>
-            <td>M/S Pernod India Private Limited</td>
-            <td>Excise Depot Vizag II</td>
-            <td>1-Aug-2017</td>
-            <td><img src="https://img.icons8.com/color/20/000000/connection-status-on--v1.png"></td>
+            <td>{{sindent.indentNo}}</td>
+            <td>{{sindent.distilleryId}}</td>
+            <td>{{sindent.depotId}}</td>
+            <td>{{sindent.indentDate}}</td>
+            <td>{{sindent.status}}</td>
         </tr>
+    </tbody>  
     </table>
 </div>
 
